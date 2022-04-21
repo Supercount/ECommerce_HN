@@ -7,7 +7,11 @@
     <div>
         <p>{{produit.description}}</p>
         <p>{{produit.prix | currency : "EUR" : 'symbol' }}</p>
-        <button class="btn btn-primary" (click)="ajouterPanier()">Ajouter au panier</button>
+        <div>
+            Quantité : <input type="number" [(ngModel)]="quantite" min="1">
+            <button class="btn btn-primary" (click)="ajouterPanier()">Ajouter au panier</button>
+        </div>
+        
         <a class="btn btn-secondary" [routerLink]="'/produits'">Retour</a>
     </div>
 </div>

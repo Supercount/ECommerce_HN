@@ -21,5 +21,10 @@ export class ProduitsService {
   delete(id: number): void {
     this.httpClient.delete(`${this.BASE_URL}/products/${id}`).subscribe();
   }
+
+  ajouterPanier(produit: Produit, quantite: number): void {
+
+  }
+
   constructor(private httpClient : HttpClient) { }
 }
