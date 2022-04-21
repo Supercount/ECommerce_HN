@@ -1,0 +1,10 @@
+
+nav.navbar-brand{
+  color: #a8a803;
+  font-width: 600;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  background-color: #2d2c2c;
+}

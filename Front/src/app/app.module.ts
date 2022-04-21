@@ -11,6 +11,7 @@ import { ProduitComponent } from './components/produit/produit.component';
 import localeFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { ProduitDetailComponent } from './components/produit-detail/produit-detail.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 registerLocaleData(localeFR);
 
@@ -20,7 +21,8 @@ registerLocaleData(localeFR);
     HeaderComponent,
     ProduitsComponent,
     ProduitComponent,
-    ProduitDetailComponent
+    ProduitDetailComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
