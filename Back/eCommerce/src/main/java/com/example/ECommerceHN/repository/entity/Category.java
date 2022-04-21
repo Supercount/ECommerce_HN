@@ -3,7 +3,7 @@ package com.example.ECommerceHN.repository.entity;
 import javax.persistence.*;
 
 @Entity
-public class Type {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,9 +11,9 @@ public class Type {
     @Column(nullable = false)
     private String name;
 
-    public Type(){}
+    public Category(){}
 
-    public Type(String name) {
+    public Category(String name) {
         this.name = name;
     }
 

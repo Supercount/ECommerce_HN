@@ -12,23 +12,25 @@ public class Product {
     private final static double TAUX_TVA = 0.2;
     @Column(length = 24, nullable = false)
     private String name;
-    @Column(length = 248, nullable = false)
+    @Column(length = 500, nullable = false)
     private String description;
     private double price;
     @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false)
-    private EnumGender gender;
+    private ColorEnum color;
     @ManyToOne
-    private Type type;
+    private Category category;
+    private String image;
 
     public Product() {
     }
-    public Product(String name, String description, double price, EnumGender gender, Type type) {
+    public Product(String name, String description, double price, ColorEnum color, Category category, String image) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.gender = gender;
-        this.type = type;
+        this.color = color;
+        this.category = category;
+        this.image= image;
     }
 
     public long getId() {
@@ -62,4 +64,11 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+    
 }

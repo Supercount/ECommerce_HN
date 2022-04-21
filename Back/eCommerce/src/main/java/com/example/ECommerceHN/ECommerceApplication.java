@@ -1,10 +1,10 @@
 package com.example.ECommerceHN;
 
 import com.example.ECommerceHN.repository.ProductRepository;
-import com.example.ECommerceHN.repository.TypeRepository;
-import com.example.ECommerceHN.repository.entity.EnumGender;
+import com.example.ECommerceHN.repository.CategoryRepository;
+import com.example.ECommerceHN.repository.entity.ColorEnum;
 import com.example.ECommerceHN.repository.entity.Product;
-import com.example.ECommerceHN.repository.entity.Type;
+import com.example.ECommerceHN.repository.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,7 +21,7 @@ public class ECommerceApplication {
 	@Autowired
 	ProductRepository productRepository;
 	@Autowired
-	TypeRepository typeRepository;
+	CategoryRepository categoryRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ECommerceApplication.class, args);
@@ -31,33 +31,28 @@ public class ECommerceApplication {
 
 	@Bean
 	@Transactional
-	CommandLineRunner commandLineRunner(ProductRepository productRepository, TypeRepository typeRepository){
+	CommandLineRunner commandLineRunner(ProductRepository productRepository, CategoryRepository categoryRepository){
 		return new CommandLineRunner() {
 			@Override
 			public void run(String... args) throws Exception {
 				List<Product> products = new ArrayList<>();
-				List<Type> types = new ArrayList<>();
+				List<Category> categories = new ArrayList<>();
 
-				Type collier = new Type("Collier");
-				Type bague = new Type("Bague");
-				Type bracelet = new Type("Bracelet");
-				Type boucles = new Type("Boucles d'oreilles");
-				Type piercing = new Type("Piercing");
-				types.add(collier);
-				types.add(bague);
-				types.add(bracelet);
-				types.add(boucles);
-				types.add(piercing);
-				typeRepository.saveAll(types);
+				Category collier = new Category("Collier");
+				Category bague = new Category("Bague");
+				Category ensemble = new Category("Ensemble");
+				Category gourmette = new Category("Gourmette");
+				categories.add(collier);
+				categories.add(bague);
+				categories.add(ensemble);
+				categories.add(gourmette);
 
-				products.add(new Product("product1","description product 1",90, EnumGender.BOTH,typeRepository.getById(1l)));
-				products.add(new Product("product2","description product 2",190, EnumGender.MAN,typeRepository.getById(2l)));
-				products.add(new Product("product3","description product 3",290, EnumGender.WOMAN,typeRepository.getById(2l)));
-				products.add(new Product("product4","description product 4",390, EnumGender.BOTH,typeRepository.getById(2l)));
-				products.add(new Product("product5","description product 5",70, EnumGender.BOTH,typeRepository.getById(3l)));
-				products.add(new Product("product6","description product 6",99.99, EnumGender.BOTH,typeRepository.getById(4l)));
-				products.add(new Product("product7","description product 7",120, EnumGender.BOTH,typeRepository.getById(5l)));
+				categoryRepository.saveAll(categories);
 
+				products.add(new Product("Nom bague","Description Bague",190, ColorEnum.BLANC,categoryRepository.getById(1l),"Image"));
+				products.add(new Product("Nom gourmette","Description gourmette",190, ColorEnum.JAUNE,categoryRepository.getById(2l),"Image"));
+				products.add(new Product("Nom chaine","Description chaine",190, ColorEnum.ROSE,categoryRepository.getById(3l),"Image"));
+				products.add(new Product("Nom ensemble","Description ensemble",190, ColorEnum.BLANC,categoryRepository.getById(4l),"Image"));
 				productRepository.saveAll(products);
 			}
 		};

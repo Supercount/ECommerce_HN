@@ -1,5 +1,5 @@
 package com.example.ECommerceHN.repository.entity;
 
-public enum EnumGender {
-    MAN, WOMAN, BOTH
+public enum ColorEnum {
+    BLANC, JAUNE, ROSE
 }
