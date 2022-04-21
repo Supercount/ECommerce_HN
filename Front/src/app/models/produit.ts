@@ -5,5 +5,6 @@ export interface Produit {
     description: string;
     categorie: string;
     quantite: number;
+    couleur: string;
     image: string;
 }

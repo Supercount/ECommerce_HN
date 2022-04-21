@@ -13,6 +13,13 @@ export class ProduitsService {
   getProducts() : Observable<Produit[]> {
     return this.httpClient.get<Produit[]>(`${this.BASE_URL}/products`);
   }
+  
+  getProduit(id: number) : Observable<Produit> {
+    return this.httpClient.get<Produit>(`${this.BASE_URL}/products/${id}`);
+  }
 
+  delete(id: number): void {
+    this.httpClient.delete(`${this.BASE_URL}/products/${id}`).subscribe();
+  }
   constructor(private httpClient : HttpClient) { }
 }
