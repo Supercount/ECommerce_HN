@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { ProduitsComponent } from './components/produits/produits.component';
 import { ProduitComponent } from './components/produit/produit.component';
 import localeFR from '@angular/common/locales/fr';
@@ -18,7 +17,6 @@ registerLocaleData(localeFR);
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ProduitsComponent,
     ProduitComponent,
     ProduitDetailComponent,
