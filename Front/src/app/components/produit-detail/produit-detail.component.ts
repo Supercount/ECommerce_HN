@@ -35,4 +35,7 @@ export class ProduitDetailComponent implements OnInit {
     this.router.navigate(['/products']);
   }
 
+  ajouterPanier() {
+
+  }
 }
