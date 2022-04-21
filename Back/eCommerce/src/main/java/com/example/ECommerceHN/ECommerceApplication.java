@@ -2,7 +2,7 @@ package com.example.ECommerceHN;
 
 import com.example.ECommerceHN.repository.ProductRepository;
 import com.example.ECommerceHN.repository.TypeRepository;
-import com.example.ECommerceHN.repository.entity.EnumGender;
+import com.example.ECommerceHN.repository.entity.EnumColor;
 import com.example.ECommerceHN.repository.entity.Product;
 import com.example.ECommerceHN.repository.entity.Type;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,13 +50,13 @@ public class ECommerceApplication {
 				types.add(piercing);
 				typeRepository.saveAll(types);
 
-				products.add(new Product("product1","description product 1",90, EnumGender.BOTH,typeRepository.getById(1l)));
-				products.add(new Product("product2","description product 2",190, EnumGender.MAN,typeRepository.getById(2l)));
-				products.add(new Product("product3","description product 3",290, EnumGender.WOMAN,typeRepository.getById(2l)));
-				products.add(new Product("product4","description product 4",390, EnumGender.BOTH,typeRepository.getById(2l)));
-				products.add(new Product("product5","description product 5",70, EnumGender.BOTH,typeRepository.getById(3l)));
-				products.add(new Product("product6","description product 6",99.99, EnumGender.BOTH,typeRepository.getById(4l)));
-				products.add(new Product("product7","description product 7",120, EnumGender.BOTH,typeRepository.getById(5l)));
+				products.add(new Product("product1","description product 1",90, EnumColor.PINK,typeRepository.getById(1l), ""));
+				products.add(new Product("product2","description product 2",190, EnumColor.PINK,typeRepository.getById(2l), ""));
+				products.add(new Product("product3","description product 3",290, EnumColor.PINK,typeRepository.getById(2l), ""));
+				products.add(new Product("product4","description product 4",390, EnumColor.PINK,typeRepository.getById(2l), ""));
+				products.add(new Product("product5","description product 5",70, EnumColor.PINK,typeRepository.getById(3l), ""));
+				products.add(new Product("product6","description product 6",99.99, EnumColor.PINK,typeRepository.getById(4l), ""));
+				products.add(new Product("product7","description product 7",120, EnumColor.WHITE,typeRepository.getById(5l), ""));
 
 				productRepository.saveAll(products);
 			}
