@@ -10,6 +10,7 @@ import { ProduitsComponent } from './components/produits/produits.component';
 import { ProduitComponent } from './components/produit/produit.component';
 import localeFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 registerLocaleData(localeFR);
 
@@ -18,7 +19,8 @@ registerLocaleData(localeFR);
     AppComponent,
     HeaderComponent,
     ProduitsComponent,
-    ProduitComponent
+    ProduitComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
