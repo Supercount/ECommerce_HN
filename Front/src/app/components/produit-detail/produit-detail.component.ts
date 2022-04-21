@@ -11,7 +11,7 @@ import { ProduitsService } from 'src/app/services/produits.service';
 export class ProduitDetailComponent implements OnInit {
   
   id !: number;
-  
+  quantite !: number;
   produit!: Produit;
 
   constructor(private route: ActivatedRoute, private service : ProduitsService, private router: Router) { }
@@ -33,6 +33,10 @@ export class ProduitDetailComponent implements OnInit {
   delete() {
     this.service.delete(this.id);
     this.router.navigate(['/products']);
+  }
+
+  ajouterPanier() {
+    this.service.ajouterPanier(this.produit, this.quantite);
   }
 
 }
