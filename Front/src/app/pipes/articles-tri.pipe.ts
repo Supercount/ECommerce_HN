@@ -13,5 +13,4 @@ export class ArticlesTriPipe implements PipeTransform {
       return values.sort((a: Produit, b: Produit) => a.prix - b.prix);
     }
   }
-
 }

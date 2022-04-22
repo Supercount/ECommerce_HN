@@ -7,15 +7,15 @@
         </select>
         Fitrer les produits :
         <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
-            <div *ngFor="let category of categories; let i=index">
-              <input type="checkbox" formArrayName="selectedCountries" [value]="category" (change)="onCheckboxChange($event)" 
-              />
-              {{ category}}
-            </div>
-            <button type="submit">Submit</button>
+            <div>
+                <span *ngFor="let choix of categories">
+                  <input type="checkbox" [(ngModel)]="filtres" 
+                   (change)="changeCheckbox($event)" checked>{{ choix }}
+                </span>
+              </div>
           </form>
     </div>
     <div class="row">
-        <app-produit [produit]="produit" class="col-md-4 mt-3" *ngFor="let produit of productList | articlesTri: ordre"></app-produit>
+        <app-produit [produit]="produit" class="col-md-4 mt-3" *ngFor="let produit of productList | articlesTri: ordre ; articleFiltre : filtres"></app-produit>
     </div>
 </div>

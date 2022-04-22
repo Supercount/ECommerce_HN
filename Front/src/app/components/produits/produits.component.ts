@@ -41,15 +41,9 @@ export class ProduitsComponent implements OnInit {
     filtres:  new FormArray([])
     }); }
 
-  onCheckboxChange(event: any) {
-    const selectedFilters = (this.form.controls['filtres'] as FormArray);
-    if (event.target.checked) {
-      selectedFilters.push(new FormControl(event.target.value));
-    } else {
-      const index = selectedFilters.controls
-      .findIndex(x => x.value === event.target.value);
-      selectedFilters.removeAt(index);
-    }
+    
+  changeCheckbox(event: Event) {
+    console.log(event.target);
   }
 
   submit() {
