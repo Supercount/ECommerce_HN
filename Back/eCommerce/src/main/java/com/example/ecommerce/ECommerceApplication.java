@@ -1,16 +1,15 @@
 package com.example.ecommerce;
 
-import com.example.ecommerce.entities.Category;
-import com.example.ecommerce.entities.ColorEnum;
-import com.example.ecommerce.entities.Product;
-import com.example.ecommerce.entities.Role;
-import com.example.ecommerce.entities.RoleNameEnum;
-import com.example.ecommerce.entities.User;
 import com.example.ecommerce.repositories.CategoryRepository;
 import com.example.ecommerce.repositories.ProductRepository;
 import com.example.ecommerce.repositories.RoleRepository;
 import com.example.ecommerce.repositories.UserRepository;
-
+import com.example.ecommerce.entities.EnumColor;
+import com.example.ecommerce.entities.Product;
+import com.example.ecommerce.entities.Role;
+import com.example.ecommerce.entities.RoleNameEnum;
+import com.example.ecommerce.entities.User;
+import com.example.ecommerce.entities.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -47,26 +46,30 @@ public class ECommerceApplication {
 			@Override
 			public void run(String... args) throws Exception {
 				List<Product> products = new ArrayList<>();
-				List<Category> categories = new ArrayList<>();
+				List<Category> types = new ArrayList<>();
 				List<User> users = new ArrayList<>();
 				List<Role> roles = new ArrayList<>();
 
-				//Add categories into DB
 				Category collier = new Category("Collier");
 				Category bague = new Category("Bague");
-				Category ensemble = new Category("Ensemble");
-				Category gourmette = new Category("Gourmette");
-				categories.add(collier);
-				categories.add(bague);
-				categories.add(ensemble);
-				categories.add(gourmette);
-				categoryRepository.saveAll(categories);
-				
-				//Add products into DB
-				products.add(new Product("Nom bague","Description Bague",190, ColorEnum.BLANC,categoryRepository.getById(1l),"Image"));
-				products.add(new Product("Nom gourmette","Description gourmette",190, ColorEnum.JAUNE,categoryRepository.getById(2l),"Image"));
-				products.add(new Product("Nom chaine","Description chaine",190, ColorEnum.ROSE,categoryRepository.getById(3l),"Image"));
-				products.add(new Product("Nom ensemble","Description ensemble",190, ColorEnum.BLANC,categoryRepository.getById(4l),"Image"));
+				Category bracelet = new Category("Bracelet");
+				Category boucles = new Category("Boucles d'oreilles");
+				Category piercing = new Category("Piercing");
+				types.add(collier);
+				types.add(bague);
+				types.add(bracelet);
+				types.add(boucles);
+				types.add(piercing);
+				categoryRepository.saveAll(types);
+
+				products.add(new Product("product1","description product 1",90, EnumColor.PINK,categoryRepository.getById(1l), ""));
+				products.add(new Product("product2","description product 2",190, EnumColor.PINK,categoryRepository.getById(2l), ""));
+				products.add(new Product("product3","description product 3",290, EnumColor.PINK,categoryRepository.getById(2l), ""));
+				products.add(new Product("product4","description product 4",390, EnumColor.PINK,categoryRepository.getById(2l), ""));
+				products.add(new Product("product5","description product 5",70, EnumColor.PINK,categoryRepository.getById(3l), ""));
+				products.add(new Product("product6","description product 6",99.99, EnumColor.PINK,categoryRepository.getById(4l), ""));
+				products.add(new Product("product7","description product 7",120, EnumColor.WHITE,categoryRepository.getById(5l), ""));
+
 				productRepository.saveAll(products);
 				
 				//Add roles into DB
@@ -99,7 +102,6 @@ public class ECommerceApplication {
 				users.add(user7);
 				
 				userRepository.saveAll(users);
-				
 			}
 		};
 	}
