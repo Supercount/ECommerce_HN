@@ -12,22 +12,30 @@ export class ProduitDetailComponent implements OnInit {
   
   id !: number;
   quantite !: number;
-  produit!: Produit;
+  produit: Produit = {
+    id:1,
+    nom:"product1",
+    prix:90,
+    description:"description product 1",
+    couleur: "pink",
+    categorie:"Bague",
+    image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
+  };
 
   constructor(private route: ActivatedRoute, private service : ProduitsService, private router: Router) { }
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.service.getProduit(this.id).subscribe({
-      next: produit => {
-        this.produit = produit;
-      }, error: err => {
-        console.log(err);
-      }, complete: () => {
-        console.log('fin de chargement');
-      }
-    });
+    // this.service.getProduit(this.id).subscribe({
+    //   next: produit => {
+    //     this.produit = produit;
+    //   }, error: err => {
+    //     console.log(err);
+    //   }, complete: () => {
+    //     console.log('fin de chargement');
+    //   }
+    // });
   }
 
   delete() {
