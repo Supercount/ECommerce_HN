@@ -30,7 +30,7 @@ export class ProduitsComponent implements OnInit {
       image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
     }
   ];
-  type: string = "";
+  
   ordre:string = "";
   
   registerForm!: FormGroup;

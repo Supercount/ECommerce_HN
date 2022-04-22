@@ -14,9 +14,9 @@ export class ProduitDetailComponent implements OnInit {
   quantite !: number;
   produit: Produit = {
     id:1,
-    nom:"product1",
+    nom:"Bague plaquée Or Rose",
     prix:90,
-    description:"description product 1",
+    description:"Une superbe bague qui ravira tout le monde fkjseghkjbflsgleqfb erjfg qkgfql ksjfqk gqjh hqkjs bqkj gkq fqlqbkjglfq hgjejrh flkqglkqh mgq hj h:fkqh geq h",
     couleur: "pink",
     categorie:"Bague",
     image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"

@@ -11,6 +11,7 @@ import localeFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { ProduitDetailComponent } from './components/produit-detail/produit-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ArticlesTriPipe } from './pipes/articles-tri.pipe';
 
 registerLocaleData(localeFR);
 
@@ -20,7 +21,8 @@ registerLocaleData(localeFR);
     ProduitsComponent,
     ProduitComponent,
     ProduitDetailComponent,
-    NavbarComponent
+    NavbarComponent,
+    ArticlesTriPipe
   ],
   imports: [
     BrowserModule,
