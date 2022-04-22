@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 @Transactional
 public class ProductController {
 
