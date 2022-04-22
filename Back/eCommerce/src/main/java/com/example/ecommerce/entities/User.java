@@ -1,6 +1,11 @@
 package com.example.ecommerce.entities;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Users")
-public class User {
+public class User implements UserDetails {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,34 +47,19 @@ public class User {
 	public User() {
 	}
 
+    public User(String username, String password, List<Role> roleList) {
+        this.username = username;
+        this.password = password;
+        this.roleList = roleList;
+    }
 
-	public User(String username, String password, String firstName, String lastName , String email, List<Role> roleList ) {
+    public User(String username, String password, String firstName, String lastName , String email, List<Role> roleList ) {
 		this.username = username;
 		this.password = password;		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.roleList = roleList;
 		this.email = email;
-	}
-
-
-	public String getUsername() {
-		return username;
-	}
-
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 
@@ -111,6 +101,60 @@ public class User {
 	public void setRoleList(List<Role> roleList) {
 		this.roleList = roleList;
 	}
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.roleList
+                .stream()
+                .map(role -> new SimpleGrantedAuthority(role.getRoleName().name()))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.username;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 	
 	
 	

@@ -1,3 +1,4 @@
+
 package com.example.ecommerce.entities;
 
 import javax.persistence.Entity;
