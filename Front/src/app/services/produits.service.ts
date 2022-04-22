@@ -23,9 +23,9 @@ export class ProduitsService {
     return this.http.get<Produit[]>(`${this.BASE_URL}/products`);
   }
 
-  //getProduit(id: number) : Observable<Produit> {
-   // return this.httpClient.get<Produit>(`${this.BASE_URL}/products/${id}`);
-  //}
+  getProduit(id: number) : Observable<Produit> {
+    return this.http.get<Produit>(`${this.BASE_URL}/products/${id}`);
+  }
   fetchAll(): Observable<Produit[]> {
     return this.http.get<Produit[]>(`${this.BASE_URL}/products`)
   }
