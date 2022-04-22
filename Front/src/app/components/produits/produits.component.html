@@ -5,6 +5,15 @@
             <option value="ASC">Prix croissant</option>
             <option value="DESC">Prix décroissant</option>
         </select>
+        Fitrer les produits :
+        <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+            <div *ngFor="let category of categories; let i=index">
+              <input type="checkbox" formArrayName="selectedCountries" [value]="category" (change)="onCheckboxChange($event)" 
+              />
+              {{ category}}
+            </div>
+            <button type="submit">Submit</button>
+          </form>
     </div>
     <div class="row">
         <app-produit [produit]="produit" class="col-md-4 mt-3" *ngFor="let produit of productList | articlesTri: ordre"></app-produit>
