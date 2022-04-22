@@ -1,7 +1,8 @@
-package com.example.ECommerceHN.repository;
+package com.example.ecommerce.repositories;
 
-import com.example.ECommerceHN.repository.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.ecommerce.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 }

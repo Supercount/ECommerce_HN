@@ -1,7 +1,8 @@
-package com.example.ECommerceHN.Controller;
+package com.example.ecommerce.controllers;
 
-import com.example.ECommerceHN.repository.ProductRepository;
-import com.example.ECommerceHN.repository.entity.Product;
+import com.example.ecommerce.entities.Product;
+import com.example.ecommerce.repositories.ProductRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

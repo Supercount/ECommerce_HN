@@ -1,8 +1,9 @@
-package com.example.ECommerceHN.repository.entity;
+package com.example.ecommerce.entities;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name="Categories")
 public class Category {
 
     @Id
