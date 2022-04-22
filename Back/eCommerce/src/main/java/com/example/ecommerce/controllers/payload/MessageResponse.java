@@ -1,4 +1,4 @@
-package com.example.ECommerceHN.Controller.payload;
+package com.example.ecommerce.controllers.payload;
 
 public class MessageResponse {
 

@@ -1,9 +1,7 @@
 package com.example.ecommerce.controllers;
 
-import com.example.ECommerceHN.Controller.payload.MessageResponse;
-import com.example.ECommerceHN.Controller.payload.SigninRequest;
-import com.example.ECommerceHN.Controller.payload.SignupRequest;
 
+import com.example.ecommerce.controllers.payload.*;
 import com.example.ecommerce.security.jwt.JwtResponse;
 import com.example.ecommerce.security.jwt.JwtUtils;
 import com.example.ecommerce.entities.User;
@@ -44,7 +42,11 @@ public class AuthController {
                     .body(new MessageResponse("User already exist !"));
         }
 
-        User createdUser = userService.signup(dto.getUsername(), dto.getPassword());
+        User createdUser = userService.signup(dto.getUsername(),
+                dto.getPassword(),
+                dto.getFirstName(),
+                dto.getLastName(),
+                dto.getEmail());
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)

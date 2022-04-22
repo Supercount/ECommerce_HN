@@ -73,11 +73,11 @@ public class UserService {
 	}
 
 	@Transactional
-	public User signup(String username, String password) {
+	public User signup(String username, String password, String firstName, String lastName, String email) {
 		Role roleUser = roleRepository.findByRoleName(RoleNameEnum.ROLE_USER);
 		List<Role> roleList = Arrays.asList(roleUser);
 
-		User u = new User(username, passwordEncoder.encode(password), roleList);
+		User u = new User(username, passwordEncoder.encode(password), firstName, lastName, email, roleList);
 		return userRepository.save(u);
 	}
 	

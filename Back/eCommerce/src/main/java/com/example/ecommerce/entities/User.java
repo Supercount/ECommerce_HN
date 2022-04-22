@@ -28,7 +28,7 @@ public class User implements UserDetails {
 	@Column(nullable = false, unique = true, length = 20)
 	private String username;
 	
-	@Column(nullable = false, unique = true , length = 15)
+	@Column(nullable = false, unique = true , length = 150)
 	private String password;
 	
 	@Column(nullable = false , length = 15, name="First_Name")
@@ -47,11 +47,6 @@ public class User implements UserDetails {
 	public User() {
 	}
 
-    public User(String username, String password, List<Role> roleList) {
-        this.username = username;
-        this.password = password;
-        this.roleList = roleList;
-    }
 
     public User(String username, String password, String firstName, String lastName , String email, List<Role> roleList ) {
 		this.username = username;
