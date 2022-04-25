@@ -8,30 +8,30 @@ import { Produit } from '../models/produit';
 })
 export class ProduitsService {
 
-  private BASE_URL = "http://localhost:3000";
+  private BASE_URL = "http://localhost:3000/api";
 
   getProducts() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/products`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/get/products`);
   }
   
   getBagues() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/bagues`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/get/bagues`);
   }
   
   getColliers() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/colliers`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/get/colliers`);
   }
 
   getGourmettes() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/gourmettes`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/get/gourmettes`);
   }
 
   getEnsembles() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/ensembles`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/get/ensembles`);
   }
 
   getProduit(id: number) : Observable<Produit> {
-    return this.httpClient.get<Produit>(`${this.BASE_URL}/products/${id}`);
+    return this.httpClient.get<Produit>(`${this.BASE_URL}/get/products/${id}`);
   }
 
   delete(id: number): void {
