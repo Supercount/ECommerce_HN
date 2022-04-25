@@ -1,17 +1,19 @@
-<h1>{{produit.nom}}</h1>
+<h1 class="mt-5">{{produit.nom}}</h1>
 
-<div class="row">
-    <div>
+<div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="col-4">
         <img [src]="produit.image" alt="Image">
     </div>
-    <div>
-        <p>{{produit.description}}</p>
-        <p>{{produit.prix | currency : "EUR" : 'symbol' }}</p>
+    <div class="col-1"></div>
+    <div class="col-4">
+        <p class="mt-5">{{produit.description}}</p>
+        <p>Prix : <span class="prix">{{produit.prix | currency : "EUR" : 'symbol' }}</span></p>
         <div>
             Quantité : <input type="number" [(ngModel)]="quantite" min="1">
             <button class="btn btn-primary" (click)="ajouterPanier()">Ajouter au panier</button>
         </div>
         
-        <a class="btn btn-secondary" [routerLink]="['/products']">Retour</a>
+        <a class="btn btn-secondary mt-3" [routerLink]="['/products']">Retour</a>
     </div>
 </div>
