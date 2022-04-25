@@ -6,7 +6,7 @@
         <option value="DESC">Prix décroissant</option>
     </select>
     <div class="row">
-        <app-produit [produit]="produit" class="col-lg-4 col-md-4 col-xd-12" *ngFor="let produit of productList"></app-produit>
+        <app-produit [produit]="produit" class="col-lg-4 col-md-4 col-xd-12" *ngFor="let produit of productList | articlesTri: ordre"></app-produit>
         <!-- <div class="col-lg-4 col-md-4 col-xd-12">
             <img src="assets/img/gourmette/gourmette-silver.png" cclass="img-fluid img-responsive" alt="bague1">
             <h4 class="silver my-2 ">Bague Amina</h4>

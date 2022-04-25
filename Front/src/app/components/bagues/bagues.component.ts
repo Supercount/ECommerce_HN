@@ -10,6 +10,7 @@ import { ProduitsService } from 'src/app/services/produits.service';
 export class BaguesComponent implements OnInit {
 
   constructor(private produitService :ProduitsService) { }
+  ordre !:string;
 
   productList !: Produit[];
 
