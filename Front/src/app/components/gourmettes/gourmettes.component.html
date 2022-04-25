@@ -1,26 +1,29 @@
 <div class="container" mt-4>
+    
+    Trier la liste par : 
+    <select [(ngModel)]="ordre">
+        <option value="ASC">Prix croissant</option>
+        <option value="DESC">Prix décroissant</option>
+    </select>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-xd-12">
+        <app-produit [produit]="produit" class="col-lg-4 col-md-4 col-xd-12" *ngFor="let produit of productList"></app-produit>
+        <!-- <div class="col-lg-4 col-md-4 col-xd-12">
             <img src="assets/img/gourmette/gourmette-silver.png" cclass="img-fluid img-responsive" alt="bague1">
             <h4 class="silver my-2 ">Bague Amina</h4>
             <p class="text-justify">Ensemble de 2 bagues de mariage en argent Sterlling 925 plaquées or blanc, avec des
                 pierres de zircon...</p>
-
         </div>
         <div class="col-lg-4 col-md-4 col-xd-12">
             <img src="assets/img/gourmette/gourmette-gold.png" cclass="img-fluid img-responsive" alt="bague2">
             <h4 class="gold my-2 ">Bague Nihal</h4>
             <p class="text-justify">Bague en argent Sterlling 925, croisée zirconias plaquée or jaune...</p>
-
         </div>
         <div class="col-lg-4 col-md-4 col-xd-12">
             <img src="assets/img/gourmette/gourmette-rose.png" cclass="img-fluid img-responsive" alt="bague3">
             <h4 class="rose my-2 ">Bague Maha</h4>
             <p class="text-justify">Bague en argent Sterlling 925 plaquée or Rose avec jolie pière de couleur rose...
             </p>
-
-
-        </div>
+        </div> -->
     </div>
 
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produit } from 'src/app/models/produit';
+import { ProduitsService } from 'src/app/services/produits.service';
 
 @Component({
   selector: 'app-bagues',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaguesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private produitService :ProduitsService) { }
+
+  productList !: Produit[];
 
   ngOnInit(): void {
+    
+    this.produitService.getBagues().subscribe({
+      next: products => {
+        this.productList = products;
+      }, error: err => {
+        console.log(err);
+      }, complete: () => {
+        console.log('fin de chargement');
+      }
+    }
+    );
   }
 
 }

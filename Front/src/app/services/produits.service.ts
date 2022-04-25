@@ -14,6 +14,22 @@ export class ProduitsService {
     return this.httpClient.get<Produit[]>(`${this.BASE_URL}/products`);
   }
   
+  getBagues() : Observable<Produit[]> {
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/bagues`);
+  }
+  
+  getColliers() : Observable<Produit[]> {
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/colliers`);
+  }
+
+  getGourmettes() : Observable<Produit[]> {
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/gourmettes`);
+  }
+
+  getEnsembles() : Observable<Produit[]> {
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/ensembles`);
+  }
+
   getProduit(id: number) : Observable<Produit> {
     return this.httpClient.get<Produit>(`${this.BASE_URL}/products/${id}`);
   }

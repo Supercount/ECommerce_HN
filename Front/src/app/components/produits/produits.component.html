@@ -11,11 +11,11 @@
                 <span *ngFor="let choix of categories">
                   <input type="checkbox" [(ngModel)]="filtres" 
                    (change)="changeCheckbox($event)" checked>{{ choix }}
-                </span>
+                </span> 
               </div>
           </form>
     </div>
     <div class="row">
-        <app-produit [produit]="produit" class="col-md-4 mt-3" *ngFor="let produit of productList | articlesTri: ordre ; articleFiltre : filtres"></app-produit>
+        <app-produit [produit]="produit" class="col-md-4 mt-3" *ngFor="let produit of productList | articlesTri: ordre"></app-produit>
     </div>
 </div>

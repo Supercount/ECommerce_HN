@@ -16,10 +16,10 @@ const routes: Routes = [
   // path: 'products',
   // component: ProduitsComponent
   // },
-  // {
-  // path: 'products/:id',
-  //  component: ProduitDetailComponent
-  //},
+  {
+  path: 'products/:id',
+   component: ProduitDetailComponent
+  },
   {
     path: "",
     component: ShowAllComponent
@@ -44,13 +44,10 @@ const routes: Routes = [
     path: "login",
     component: LoginComponent
   },
-
   {
     path: "inscription",
     component: RegisterComponent
   },
-
-
   {
     path: 'users',
     component: UsersmanagerComponent
