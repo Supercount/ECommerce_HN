@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/api/auth")
+@RequestMapping("/api/get")
 @Transactional
 public class ProductController {
 
@@ -44,6 +44,45 @@ public class ProductController {
         return ResponseEntity
                 .ok()
                 .body(product);
+    }
+
+
+
+    @GetMapping("/necklace")
+    public ResponseEntity<?> getNeck(){
+        List<Product> products = this.productRepository.findByCategory(categoryRepository.getCategoryByName("Collier"));
+
+        return ResponseEntity
+                .ok()
+                .body(products);
+    }
+
+    @GetMapping("/chain")
+    public ResponseEntity<?> getChain(){
+        List<Product> products = this.productRepository.findByCategory(categoryRepository.getCategoryByName("Bracelet"));
+
+        return ResponseEntity
+                .ok()
+                .body(products);
+    }
+
+    @GetMapping("/ring")
+    public ResponseEntity<?> getRing(){
+        List<Product> products = this.productRepository.findByCategory(categoryRepository.getCategoryByName("Bague"));
+
+        return ResponseEntity
+                .ok()
+                .body(products);
+    }
+
+    @GetMapping("/set")
+    public ResponseEntity<?> getSet(){
+            List<Product> products = this.productRepository.findByCategory(categoryRepository.getCategoryByName("Ensemble"));
+
+        return ResponseEntity
+                .ok()
+                .body(products);
+
     }
 
     @DeleteMapping("/products/{id}")
@@ -105,6 +144,7 @@ public class ProductController {
                     .build();
         }
     }
+
 
 
 

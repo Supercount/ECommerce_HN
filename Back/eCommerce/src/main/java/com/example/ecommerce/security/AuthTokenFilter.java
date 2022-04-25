@@ -26,17 +26,23 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     JwtUtils jwtUtils;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        String tokenJwt = parseJwt(request);
 
-        System.out.println("DOFILTERINTERNAL");
-        if (tokenJwt != null && jwtUtils.validateToken(tokenJwt)){
+        try {
+            String tokenJwt = parseJwt(request);
 
-            String userName = jwtUtils.getUsernameFromToken(tokenJwt);
+            System.out.println("DOFILTERINTERNAL");
+            if (tokenJwt != null && jwtUtils.validateToken(tokenJwt)) {
+                System.out.println("ok");
 
-            User user = (User) userDetailsService.loadUserByUsername(userName);
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
-            authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+                String userName = jwtUtils.getUsernameFromToken(tokenJwt);
+
+                User user = (User) userDetailsService.loadUserByUsername(userName);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+            }
+        }catch (Exception e){
+            System.out.println("cannot set user authentication {}" + e);
         }
         filterChain.doFilter(request,response);
     }

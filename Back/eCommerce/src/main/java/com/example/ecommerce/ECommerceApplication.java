@@ -53,13 +53,12 @@ public class ECommerceApplication {
 				Category collier = new Category("Collier");
 				Category bague = new Category("Bague");
 				Category bracelet = new Category("Bracelet");
-				Category boucles = new Category("Boucles d'oreilles");
-				Category piercing = new Category("Piercing");
+				Category ensemble = new Category("Ensemble");
+
 				types.add(collier);
 				types.add(bague);
 				types.add(bracelet);
-				types.add(boucles);
-				types.add(piercing);
+				types.add(ensemble);
 				categoryRepository.saveAll(types);
 
 				products.add(new Product("product1","description product 1",90, EnumColor.PINK,categoryRepository.getById(1l), ""));
@@ -68,7 +67,7 @@ public class ECommerceApplication {
 				products.add(new Product("product4","description product 4",390, EnumColor.PINK,categoryRepository.getById(2l), ""));
 				products.add(new Product("product5","description product 5",70, EnumColor.PINK,categoryRepository.getById(3l), ""));
 				products.add(new Product("product6","description product 6",99.99, EnumColor.PINK,categoryRepository.getById(4l), ""));
-				products.add(new Product("product7","description product 7",120, EnumColor.WHITE,categoryRepository.getById(5l), ""));
+				products.add(new Product("product7","description product 7",120, EnumColor.WHITE,categoryRepository.getById(4l), ""));
 
 				productRepository.saveAll(products);
 				

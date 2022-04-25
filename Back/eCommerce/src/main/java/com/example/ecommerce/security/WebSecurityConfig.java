@@ -1,10 +1,12 @@
 package com.example.ecommerce.security;
 
 
+import com.example.ecommerce.entities.RoleNameEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -12,9 +14,12 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+@EnableGlobalMethodSecurity(prePostEnabled=true)
 @EnableWebSecurity
-public class WebSecurityConfig {
+@Configuration
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -25,8 +30,7 @@ public class WebSecurityConfig {
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
 
-    @Configuration
-    public class ApiWebSecurityConfig extends WebSecurityConfigurerAdapter {
+
 
         @Bean
         @Override
@@ -41,10 +45,16 @@ public class WebSecurityConfig {
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
+
+            /*
+            http.csrf()
+                    .ignoringAntMatchers("/api/auth/**");
+            http.authorizeRequests()
+                    .antMatchers("/api/get/**").hasRole("USER");*/
+
             http
-                    .antMatcher("/api/**")
                     .cors()
-                    .and().csrf().ignoringAntMatchers("/api/**")
+                    .and().csrf().ignoringAntMatchers("/api/auth/**")
                     .and()
                     .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
                     .and()
@@ -53,10 +63,14 @@ public class WebSecurityConfig {
 
                     .and()
                     .authorizeRequests()
+                    .antMatchers("/api/get/**").hasRole("USER")
                     .antMatchers("/api/auth/**").permitAll()
-                    .antMatchers("/signin").permitAll()
+                    .antMatchers("/api/auth/signin").permitAll()
                     .anyRequest().authenticated();
+
+            http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+
         }
     }
 
-}
+
