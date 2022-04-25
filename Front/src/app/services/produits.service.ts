@@ -40,17 +40,19 @@ export class ProduitsService {
 
   ajouterPanier(produit: Produit, quantite: number): void {
     let panier = localStorage.getItem("panier");
-    if (panier == null) {
-      panier = {"product": produit.id, "quantity": quantite}.toString();
-    } else {
-      let panierJSON =  JSON.parse(panier);
-      for (let i = 0; i < panierJSON.length; i++) {
-        if (panierJSON[i].product == produit.id) {
-          panierJSON[i].quantity += quantite;
-        }
+    let panierJSON = (panier != null)? JSON.parse(panier) : [];
+    let elementPresent = false;
+    for (let i = 0; i < panierJSON.length; i++) {
+      if (panierJSON[i].product == produit.id) {
+        elementPresent = true;
+        panierJSON[i].quantity += quantite;
       }
-      panier = JSON.stringify(panierJSON);
     }
+    if (!elementPresent) {
+      panierJSON.push({product: produit.id, quantity: quantite});
+    }
+    panier = JSON.stringify(panierJSON);
+    console.log(panier);
     localStorage.setItem("panier", panier);
   }
 

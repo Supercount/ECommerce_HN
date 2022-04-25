@@ -13,7 +13,7 @@ export class ProduitDetailComponent implements OnInit {
   id !: number;
   quantite !: number;
   produit: Produit = {
-    id:1,
+    id:3,
     nom:"Bague plaquée Or Rose",
     prix:90,
     description:"Une superbe bague qui ravira tout le monde fkjseghkjbflsgleqfb erjfg qkgfql ksjfqk gqjh hqkjs bqkj gkq fqlqbkjglfq hgjejrh flkqglkqh mgq hj h:fkqh geq h",
