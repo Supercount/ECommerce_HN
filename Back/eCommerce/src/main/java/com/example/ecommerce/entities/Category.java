@@ -1,9 +1,10 @@
-package com.example.ECommerceHN.repository.entity;
+package com.example.ecommerce.entities;
 
 import javax.persistence.*;
 
 @Entity
-public class Type {
+@Table(name="Categories")
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,9 +12,9 @@ public class Type {
     @Column(nullable = false)
     private String name;
 
-    public Type(){}
+    public Category(){}
 
-    public Type(String name) {
+    public Category(String name) {
         this.name = name;
     }
 
