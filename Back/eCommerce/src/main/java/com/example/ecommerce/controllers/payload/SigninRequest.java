@@ -6,11 +6,11 @@ public class SigninRequest {
 
     @Size(min = 4, max = 120)
     private String username;
-    @Size(min = 6, max = 120)
+    @Size(min = 8, max = 120)
     private String password;
-    @Size(min = 6, max = 120)
+    @Size(min = 2, max = 120)
     private String firstName;
-    @Size(min = 6, max = 120)
+    @Size(min = 2, max = 120)
     private String lastName;
     @Size(min = 6, max = 120)
     private String email;
