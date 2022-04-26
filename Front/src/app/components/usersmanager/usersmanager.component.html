@@ -27,13 +27,21 @@
                                 </div>
 
                                 <div class="col-4">
-                                    <input [(ngModel)]="newUser.username" type="email" class="form-control" name="email"
+                                    <input [(ngModel)]="newUser.email" type="email" class="form-control" name="email"
                                         placeholder="Email" required="required">
+                                </div >
+                              <tr>
+                              <div class="dropdown">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Role <span class="caret"></span> </button>
+                                <ul class="dropdown-menu">
+                                  <li> user </li>
+                                  <li class="divider"> </li>
+                                  <li> admin</li>
+                                  <li>admin user </li>
+                                </ul>
                                 </div>
-                                <div class="col-2">
-                                    <input [(ngModel)]="newUser.role" type="text" class="form-control" name="role"
-                                        placeholder="Rôle" required="required">
-                                </div>
+                              </tr>
+
                                 <div class="col-1">
                                     <button *ngIf="!myCondition" (click)="addUser()" type="button"
                                         class="btn btn-primary btn-sm">Enregistrer</button>
@@ -84,12 +92,12 @@
 
                         <td>{{userIterator.lastname}}</td>
                         <td>{{userIterator.firstname}}</td>
-                        <td>{{userIterator.username}}</td>
+                        <td>{{userIterator.email}}</td>
                         <td>{{userIterator.role}}</td>
                         <td>
                             <button (click)="editUser(userIterator)" type="button"
                                 class="btn btn-primary btn-sm">Editer</button>
-                            <a href="#" (click)="deleteUser(userIterator.id)" class="delete" title="Delete"
+                            <a routerLink="/users" (click)="deleteUser(userIterator.id)" class="delete" title="Delete"
                                 data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                         </td>
                     </tr>

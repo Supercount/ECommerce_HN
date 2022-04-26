@@ -24,6 +24,7 @@ import { LoginComponent } from './components/contact/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ShowAllComponent } from './components/show-all/show-all.component';
 import { ArticlesTriPipe } from './pipes/articles-tri.pipe';
+import { ContactComponent } from './components/contact/contact.component';
 
 registerLocaleData(localeFR);
 
@@ -46,7 +47,9 @@ registerLocaleData(localeFR);
     LoginComponent,
     FooterComponent,
     ShowAllComponent,
-    ArticlesTriPipe
+    ArticlesTriPipe,
+    ContactComponent
+
   ],
   imports: [
     BrowserModule,

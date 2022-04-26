@@ -16,7 +16,8 @@ export class UsersmanagerComponent implements OnInit {
     firstname: '',
     lastname: '',
     email: '',
-    role: ''
+    password: '',
+    role: 'User'
 
   };
   myCondition: Boolean = false;
@@ -55,6 +56,7 @@ export class UsersmanagerComponent implements OnInit {
       firstname: '',
       lastname: '',
       email: '',
+      password: '',
       role: ''
     }
   }
@@ -72,4 +74,16 @@ export class UsersmanagerComponent implements OnInit {
       })
   }
 
+  //searchName(): void {
+    //this.currentUsersmanager = {};
+   // this.currentIndex = -1;
+   // this.userService.findByTitle(this.lastName)
+    //  .subscribe({
+      //  next: (data) => {
+        //  this.Usersmanager = data;
+         // console.log(data);
+       // },
+      //  error: (e) => console.error(e)
+     // });
+  //}
 }
