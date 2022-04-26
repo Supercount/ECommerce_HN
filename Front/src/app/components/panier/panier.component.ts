@@ -11,10 +11,15 @@ export class PanierComponent implements OnInit {
   
   panier = localStorage.getItem("panier");
   panierList = (this.panier != null)? JSON.parse(this.panier) : [];
+  total!: number;
 
   constructor(private service : ProduitsService) { }
 
   ngOnInit(): void {
+    this.total = 0;
+    for (let i = 0; i < this.panierList.length; i++) {
+      this.total += this.panierList[i].price * this.panierList[i].quantity;
+    }
   }
 
   supprimer(id: number): void {
