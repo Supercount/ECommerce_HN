@@ -11,20 +11,20 @@ import localeFR from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
 import { ProduitDetailComponent } from './components/produit-detail/produit-detail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ArticlesTriPipe } from './pipes/articles-tri.pipe';
+import { PanierComponent } from './components/panier/panier.component';
 import { UsersTableComponent } from './components/users-table/users-table.component';
-import { UsersmanagerComponent } from './components/usersmanager/usersmanager.component';
-import { HeaderBijouterieComponent } from './components/header-bijouterie/header-bijouterie.component';
-import { NavbarV2Component } from './components/navbar-v2/navbar-v2.component';
 import { BaguesComponent } from './components/bagues/bagues.component';
 import { ColliersComponent } from './components/colliers/colliers.component';
+import { LoginComponent } from './components/contact/login/login.component';
+import { RegisterComponent } from './components/contact/register/register.component';
 import { EnsemblesComponent } from './components/ensembles/ensembles.component';
 import { GourmettesComponent } from './components/gourmettes/gourmettes.component';
-import { RegisterComponent } from './components/contact/register/register.component';
-import { LoginComponent } from './components/contact/login/login.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { HeaderBijouterieComponent } from './components/header-bijouterie/header-bijouterie.component';
+import { NavbarV2Component } from './components/navbar-v2/navbar-v2.component';
 import { ShowAllComponent } from './components/show-all/show-all.component';
-import { ArticlesTriPipe } from './pipes/articles-tri.pipe';
 import { ContactComponent } from './components/contact/contact.component';
+import { UsersmanagerComponent } from './components/usersmanager/usersmanager.component';
 
 registerLocaleData(localeFR);
 
@@ -45,11 +45,10 @@ registerLocaleData(localeFR);
     GourmettesComponent,
     RegisterComponent,
     LoginComponent,
-    FooterComponent,
     ShowAllComponent,
     ArticlesTriPipe,
-    ContactComponent
-
+    ContactComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

@@ -10,26 +10,7 @@ import { ProduitsService } from 'src/app/services/produits.service';
 })
 export class ProduitsComponent implements OnInit {
 
-  productList : Produit[] = [
-    {
-      id:1,
-      nom:"product1",
-      prix:90,
-      description:"description product 1",
-      couleur: "pink",
-      categorie:"Bague",
-      image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
-    },
-    {
-      id:2,
-      nom:"produit2",
-      prix:100,
-      description:"description produit2",
-      couleur: "or",
-      categorie:"Collier",
-      image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
-    }
-  ];
+  productList !: Produit[];
   categories:string[] = ["Bague", "Collier", "Bracelet"];
   ordre:string = "";
   filtres:string[] = [];
@@ -53,16 +34,16 @@ export class ProduitsComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.formBuilder.group({
     });
-    // this.produitService.getProducts().subscribe({
-    //   next: products => {
-    //     this.productList = products;
-    //   }, error: err => {
-    //     console.log(err);
-    //   }, complete: () => {
-    //     console.log('fin de chargement');
-    //   }
-    // }
-    // );
+    this.produitService.getProducts().subscribe({
+      next: products => {
+        this.productList = products;
+      }, error: err => {
+        console.log(err);
+      }, complete: () => {
+        console.log('fin de chargement');
+      }
+    }
+    );
   }
 
 }

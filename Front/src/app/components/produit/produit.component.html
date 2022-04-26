@@ -1,18 +1,3 @@
-<!-- <div class="card" style="width: 18rem;">
-    <img [src]="produit.image" class="card-img-top align-self-center" [alt]="produit.nom">
-    <div class="card-body">
-        <h5 class="card-title">{{produit.nom}}</h5>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            Prix : <span  *ngIf="produit.prix;else na">{{produit.prix | currency : "EUR" : 'symbol' }} </span>
-        </li>
-        <li class="list-group-item">
-            <a [routerLink]="['/products', produit.id]">Afficher les détails</a>
-        </li>
-    </ul>
-    <ng-template #na>N/A</ng-template>
-</div> -->
 
 <div style="width: 18rem;" class="mt-5">
     <img [src]="produit.image" class="img-fluid img-responsive align-self-center" [alt]="produit.nom">
