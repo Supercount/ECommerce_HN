@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(value = "*")
-@RequestMapping("/api/get")
+@RequestMapping("/api/products")
 @Transactional
 public class ProductController {
 
@@ -24,7 +24,7 @@ public class ProductController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @GetMapping("/products")
+    @GetMapping("/all")
     public ResponseEntity<?> getProducts(){
         System.out.println("ENTRY GETPRODUCTS");
         List<Product> products = this.productRepository.findAll();
@@ -34,7 +34,7 @@ public class ProductController {
                 .body(products);
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getProduct(@PathVariable("id") Long id){
         System.out.println("ENTRY GETPRODUCT");
         Product product = this.productRepository.getById(id);

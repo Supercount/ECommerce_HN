@@ -19,7 +19,7 @@ import com.example.ecommerce.entities.User;
 import com.example.ecommerce.services.UserService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/get")
 public class UserController {
 	
 	@Autowired

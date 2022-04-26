@@ -21,6 +21,10 @@ const routes: Routes = [
    component: ProduitDetailComponent
   },
   {
+    path: "login",
+    component: LoginComponent
+  },
+  {
     path: "",
     component: ShowAllComponent
   },
