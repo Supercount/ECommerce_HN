@@ -8,14 +8,17 @@ import { ProduitsService } from 'src/app/services/produits.service';
 })
 export class PanierComponent implements OnInit {
 
-  
+
   panier = localStorage.getItem("panier");
-  panierList = (this.panier != null)? JSON.parse(this.panier) : [];
+  panierList = (this.panier != null) ? JSON.parse(this.panier) : [];
   total!: number;
 
-  constructor(private service : ProduitsService) { }
+  constructor(private service: ProduitsService) { }
 
   ngOnInit(): void {
+    this.calculTotal();
+  }
+  calculTotal(): void {
     this.total = 0;
     for (let i = 0; i < this.panierList.length; i++) {
       this.total += this.panierList[i].price * this.panierList[i].quantity;
@@ -24,7 +27,10 @@ export class PanierComponent implements OnInit {
 
   supprimer(id: number): void {
     for (let i = 0; i < this.panierList.length; i++) {
-      if (this.panierList[i].product == id) {
+      console.log('ca rentre dans delete avant if')
+
+      if (this.panierList[i].product === id) {
+        console.log('ca rentre dans delete')
         this.panierList.splice(i, 1);
       }
     }
