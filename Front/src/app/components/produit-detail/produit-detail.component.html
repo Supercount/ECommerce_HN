@@ -10,7 +10,7 @@
         <p class="mt-5">{{produit.description}}</p>
         <p>Prix : <span class="prix">{{produit.prix | currency : "EUR" : 'symbol' }}</span></p>
         <div>
-            Quantité : <input type="number" [(ngModel)]="quantite" min="1">
+            Quantité : <input type="number" [(ngModel)]="quantite" min="1" [defaultValue]="1">
             <button class="btn btn-primary" (click)="ajouterPanier()">Ajouter au panier</button>
         </div>
         

@@ -8,26 +8,26 @@ import { Produit } from '../models/produit';
 })
 export class ProduitsService {
 
-  private BASE_URL = "http://localhost:3000";
+  private BASE_URL = "http://localhost:3000/api";
 
   getProducts() : Observable<Produit[]> {
     return this.httpClient.get<Produit[]>(`${this.BASE_URL}/products`);
   }
   
   getBagues() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/bagues`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/ring`);
   }
   
   getColliers() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/colliers`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/necklace`);
   }
 
   getGourmettes() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/gourmettes`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/chain`);
   }
 
   getEnsembles() : Observable<Produit[]> {
-    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/ensembles`);
+    return this.httpClient.get<Produit[]>(`${this.BASE_URL}/set`);
   }
 
   getProduit(id: number) : Observable<Produit> {
@@ -39,7 +39,21 @@ export class ProduitsService {
   }
 
   ajouterPanier(produit: Produit, quantite: number): void {
-
+    let panier = localStorage.getItem("panier");
+    let panierJSON = (panier != null)? JSON.parse(panier) : [];
+    let elementPresent = false;
+    for (let i = 0; i < panierJSON.length; i++) {
+      if (panierJSON[i].product == produit.id) {
+        elementPresent = true;
+        panierJSON[i].quantity += quantite;
+      }
+    }
+    if (!elementPresent) {
+      panierJSON.push({product: produit.id, quantity: quantite});
+    }
+    panier = JSON.stringify(panierJSON);
+    console.log(panier);
+    localStorage.setItem("panier", panier);
   }
 
   constructor(private httpClient : HttpClient) { }
