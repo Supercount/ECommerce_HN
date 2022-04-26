@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +21,8 @@ import com.example.ecommerce.entities.User;
 import com.example.ecommerce.services.UserService;
 
 @RestController
-@RequestMapping("/api/get")
+@CrossOrigin(value = "*")
+@RequestMapping("/api/users")
 public class UserController {
 	
 	@Autowired
@@ -43,6 +46,9 @@ public class UserController {
 		try {
 			User newUSer= new User();
 			newUSer.setUsername(dto.getUsername());
+			if (dto.getPassword().isEmpty()) {
+				newUSer.setPassword("test");
+			}
 			newUSer.setPassword(dto.getPassword());
 			newUSer.setFirstName(dto.getFirstName());
 			newUSer.setLastName(dto.getLastName());
@@ -57,24 +63,28 @@ public class UserController {
 	}
 	
 	@PutMapping("users/{id}")
-	public ResponseEntity<?> editUser(Long id, @RequestBody AddUser dto)
+	public ResponseEntity<?> editUser(@RequestBody AddUser dto)
 	{
+		System.out.println("edit user entry "+dto);
 		try {
-			User userEdited= this.userService.updateUser(id, dto);
+			User userEdited= this.userService.updateUser(dto.getId(), dto);
 			return ResponseEntity.ok().body(userEdited);		
 			
 	} catch (Exception e) {
+		System.out.println(e.getMessage());
 		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 		     
 	}
 	
 	@DeleteMapping("users/{id}")
-	public ResponseEntity<?> deleteUser(Long id)
-	{
+	public ResponseEntity<?> deleteUser(@PathVariable("id") Long id)
+	
+	{System.out.println("delete entry"+id);
+		
 		try {
 			this.userService.deleteUser(id);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);		
+			return new ResponseEntity<>(HttpStatus.OK);		
 			
 	} catch (Exception e) {
 		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -82,14 +92,5 @@ public class UserController {
 		     
 	}
 	
-	@DeleteMapping("/users")
-	  public ResponseEntity<HttpStatus> deleteAllUsers() {
-	    try {
-	    	userService.deleteAllUsers();
-	      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	    } catch (Exception e) {
-	      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
-	  }
 
 }

@@ -37,6 +37,11 @@ public class Role {
 	public void setRoleName(RoleNameEnum roleName) {
 		this.roleName = roleName;
 	}
+
+	@Override
+	public String toString() {
+		return "Role [id=" + id + ", roleName=" + roleName + "]";
+	}
 	
 	
 	

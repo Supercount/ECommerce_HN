@@ -7,6 +7,7 @@ import com.example.ecommerce.entities.Role;
 
 public class AddUser {
 
+	private Long id;
 	private String username;	
 	private String password;
 	private String firstName;
@@ -20,8 +21,8 @@ public class AddUser {
 	}
 
 
-	public AddUser(String username, String password, String firstName, String lastName, String email,List<Role> roleList) {
-		super();
+	public AddUser(Long id,String username, String password, String firstName, String lastName, String email,List<Role> roleList) {
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -88,6 +89,23 @@ public class AddUser {
 
 	public void setRoleList(List<Role> roleList) {
 		this.roleList = roleList;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	@Override
+	public String toString() {
+		return "AddUser [username=" + username + ", password=" + password + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + ", roleList=" + roleList + "]";
 	}
 	
 	

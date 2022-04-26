@@ -7,31 +7,31 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UsersService {
-  URL_API_JS = 'http://localhost:3000/users';
+  URL_API = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) { }
 
   //Get All users
 
   getAll() {
-    return this.http.get<User[]>(this.URL_API_JS);
+    return this.http.get<User[]>(`${this.URL_API}/users`);
 
   }
 
   delete(id: Number) {
 
-    return this.http.delete(`${this.URL_API_JS}/${id}`);
+    return this.http.delete(`${this.URL_API}/users/${id}`);
 
   }
 
-  post(users: any) {
+  post(users: User) {
 
-    return this.http.post<User>(this.URL_API_JS, users);
+    return this.http.post<User>(`${this.URL_API}/users/new_user`, users);
 
   }
 
-  update(users: any) {
-    return this.http.put(`${this.URL_API_JS}/${users.id}`, users)
+  update(users: User) {
+    return this.http.put(`${this.URL_API}/users/${users.id}`, users)
   }
 
 

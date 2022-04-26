@@ -97,6 +97,62 @@
       "password": "hjjjjjjj",
       "role": "User",
       "id": 15
+    },
+    {
+      "lastname": "naffah",
+      "firstname": "ikram",
+      "email": "naffah.mostapha@gmail.com",
+      "password": "hhhhhhhh",
+      "role": "User",
+      "id": 16
+    },
+    {
+      "lastname": "ddd",
+      "firstname": "dd",
+      "email": "mehdi.bidrissi@gmail.com",
+      "password": "ddddddddddd",
+      "role": "User",
+      "id": 17
+    },
+    {
+      "id": 18,
+      "username": "",
+      "password": "",
+      "firstname": "ikramAdmin",
+      "lastname": "naffah",
+      "email": "ikramnaffah8@gmail.com",
+      "roleList": [
+        "User"
+      ]
+    },
+    {
+      "id": 19,
+      "username": "",
+      "password": "",
+      "firstname": "El",
+      "lastname": "Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "roleList": [
+        "User"
+      ]
+    },
+    {
+      "id": 20,
+      "username": "",
+      "password": "",
+      "firstname": "El",
+      "lastname": "Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "roleList": []
+    },
+    {
+      "id": 21,
+      "username": "",
+      "password": "",
+      "firstname": "ikram",
+      "lastname": "naffah",
+      "email": "ikramnaffah8@gmail.com",
+      "roleList": []
     }
   ],
   "profile": {

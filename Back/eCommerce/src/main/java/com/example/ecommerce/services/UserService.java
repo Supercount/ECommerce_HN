@@ -1,5 +1,6 @@
 package com.example.ecommerce.services;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -49,12 +50,34 @@ public class UserService {
 	// Update User
 	
 	public User updateUser(Long id, AddUser editUser) {
+	
 		User userToEdit= this.userRepository.getById(id);
+		System.out.println("user to edit"+userToEdit);
 		userToEdit.setUsername(editUser.getUsername());
-		userToEdit.setPassword(editUser.getPassword());
+		userToEdit.setPassword(passwordEncoder.encode(editUser.getPassword()));
 		userToEdit.setFirstName(editUser.getFirstName());
 		userToEdit.setLastName(editUser.getLastName());
-		userToEdit.setRoleList(editUser.getRoleList());
+		
+		
+		List<Role> roleListe=editUser.getRoleList();
+		List<Role> roles=new ArrayList<>();
+		
+		
+		for (int i=0; i<roleListe.size(); i++) {
+			
+			this.roleRepository.findByRoleName(roleListe.get(i).getRoleName());
+
+			roles.add(this.roleRepository.findByRoleName(roleListe.get(i).getRoleName()));
+
+			
+		}
+		
+		userToEdit.setRoleList(roles);
+		
+		
+		System.out.println("user edited"+userToEdit);
+		this.userRepository.save(userToEdit);
+		
 		return userToEdit;
 	}
 	

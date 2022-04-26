@@ -10,16 +10,19 @@ import { UsersService } from 'src/app/services/users.service';
 export class UsersmanagerComponent implements OnInit {
 
 
-  myArray: any[] = [];
-  newUser: any = {
-    id: '',
-    firstname: '',
-    lastname: '',
-    email: '',
+  myArray: User[] = [];
+  newUser: User = {
+    id: 0,
+    username: '',
     password: '',
-    role: 'User'
+    firstName: '',
+    lastName: '',
+    email: '',
+    roleList: []
 
   };
+
+
   myCondition: Boolean = false;
 
   constructor(private userService: UsersService) { }
@@ -52,16 +55,17 @@ export class UsersmanagerComponent implements OnInit {
 
   emptyInput() {
     this.newUser = {
-      id: '',
-      firstname: '',
-      lastname: '',
-      email: '',
+      id: 0,
+      username: '',
       password: '',
-      role: ''
+      firstName: '',
+      lastName: '',
+      email: '',
+      roleList: []
     }
   }
 
-  editUser(userIterator: any) {
+  editUser(userIterator: User) {
     this.newUser = userIterator;
     this.myCondition = true;
   }
@@ -75,15 +79,15 @@ export class UsersmanagerComponent implements OnInit {
   }
 
   //searchName(): void {
-    //this.currentUsersmanager = {};
-   // this.currentIndex = -1;
-   // this.userService.findByTitle(this.lastName)
-    //  .subscribe({
-      //  next: (data) => {
-        //  this.Usersmanager = data;
-         // console.log(data);
-       // },
-      //  error: (e) => console.error(e)
-     // });
+  //this.currentUsersmanager = {};
+  // this.currentIndex = -1;
+  // this.userService.findByTitle(this.lastName)
+  //  .subscribe({
+  //  next: (data) => {
+  //  this.Usersmanager = data;
+  // console.log(data);
+  // },
+  //  error: (e) => console.error(e)
+  // });
   //}
 }

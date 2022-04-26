@@ -3,6 +3,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,25 +14,27 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="Users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 public class User implements UserDetails {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable = false, unique = true, length = 20)
+	@Column(nullable = false, unique = true, length = 120)
 	private String username;
 	
-	@Column(nullable = false, unique = true , length = 150)
+	@Column(nullable = false, unique = true , length = 120)
 	private String password;
 	
-	@Column(nullable = false , length = 15, name="First_Name")
+	@Column(nullable = false , length = 120, name="First_Name")
 	private String firstName;
 	
-	@Column(nullable = false , length = 15 , name="Last_Name")
+	@Column(nullable = false , length = 120 , name="Last_Name")
 	private String lastName;
 	
-	@Column(nullable = false , length = 15 , name="email")
+	@Column(nullable = false , length = 120 , name="email")
 	private String email;
 
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -142,6 +146,13 @@ public class User implements UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", email=" + email + ", roleList=" + roleList + "]";
+	}
 
 	
 	

@@ -5,6 +5,7 @@ import com.example.ecommerce.entities.RoleNameEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -54,7 +55,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
             http
                     .cors()
-                    .and().csrf().ignoringAntMatchers("/api/auth/**")
+                    .and().csrf().ignoringAntMatchers("/api/**")
                     .and()
                     .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
                     .and()
@@ -64,7 +65,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                     .and()
                     .authorizeRequests()
                     .antMatchers("/api/products/**").hasRole("USER")
+                   // .antMatchers("/api/users/**").hasAnyRole("USER","ADMIN")
                     .antMatchers("/api/auth/**").permitAll()
+ 
+                    .antMatchers("/api/users/**").permitAll() 
+                    //.antMatchers(HttpMethod.POST,"/api/users/users/new_user").permitAll()
                     .antMatchers("/api/auth/signin").permitAll()
                     .anyRequest().authenticated();
 

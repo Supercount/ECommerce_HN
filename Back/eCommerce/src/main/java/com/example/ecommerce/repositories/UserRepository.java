@@ -8,7 +8,10 @@ import com.example.ecommerce.entities.User;
 
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 @Repository
+@Transactional
 public interface UserRepository extends JpaRepository<User, Long>{
 
 
