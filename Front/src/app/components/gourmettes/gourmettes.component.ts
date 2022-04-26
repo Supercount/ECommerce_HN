@@ -12,26 +12,7 @@ export class GourmettesComponent implements OnInit {
   constructor(private produitService :ProduitsService) { }
   ordre !: string;
 
-  productList : Produit[] = [
-    {
-      id:1,
-      nom:"product1",
-      prix:90,
-      description:"description product 1",
-      couleur: "pink",
-      categorie:"Bague",
-      image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
-    },
-    {
-      id:2,
-      nom:"produit2",
-      prix:100,
-      description:"description produit2",
-      couleur: "silver",
-      categorie:"Collier",
-      image:"https://www.maty.com/contenu/pagesstatiquesRWD/511/images/bijoux-bague.jpg"
-    }
-  ];
+  productList !: Produit[];
 
   ngOnInit(): void {
     this.produitService.getBagues().subscribe({
