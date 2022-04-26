@@ -10,6 +10,7 @@ import { ProduitDetailComponent } from './components/produit-detail/produit-deta
 import { ProduitsComponent } from './components/produits/produits.component';
 import { ShowAllComponent } from './components/show-all/show-all.component';
 import { UsersmanagerComponent } from './components/usersmanager/usersmanager.component';
+import {ContactComponent} from "./components/contact/contact.component";
 
 const routes: Routes = [
   // {
@@ -20,6 +21,10 @@ const routes: Routes = [
   // path: 'products/:id',
   //  component: ProduitDetailComponent
   //},
+  {
+    path: "contact",
+    component: ContactComponent
+  },
   {
     path: "",
     component: ShowAllComponent
