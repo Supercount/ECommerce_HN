@@ -35,7 +35,7 @@ export class ProduitsService {
   }
 
   delete(id: number): void {
-    this.httpClient.delete(`${this.BASE_URL}/products/${id}`).subscribe();
+    this.httpClient.delete(`${this.BASE_URL}/${id}`).subscribe();
   }
 
   ajouterPanier(produit: Produit, quantite: number): void {
@@ -49,7 +49,7 @@ export class ProduitsService {
       }
     }
     if (!elementPresent) {
-      panierJSON.push({ product: produit.id, quantity: quantite });
+      panierJSON.push({ product: produit.id, name:produit.name, price:produit.price, quantity: quantite });
     }
     panier = JSON.stringify(panierJSON);
     console.log(panier);

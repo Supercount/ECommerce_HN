@@ -18,10 +18,10 @@
             </thead>
             <tbody>
               <tr *ngFor="let article of panierList">
-                <th scope="row">{{article.nom}}</th>
-                <td>{{article.quantity}}</td>
-                <td>{{article.prix}}</td>
-                <td>{{article.prix * article.quantity}}</td>
+                <th scope="row">{{panierList.name}}</th>
+                <td>{{panierList.quantity}}</td>
+                <td>{{panierList.price}}</td>
+                <td>{{panierList.price * article.quantity}}</td>
                 <td><button class="btn btn-danger" (click)="supprimer(article.id)">Supprimer</button></td>
               </tr>
             </tbody>
