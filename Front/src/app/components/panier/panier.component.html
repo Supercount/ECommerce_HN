@@ -1,0 +1,30 @@
+<div *ngIf="panier == null">
+    <div class="alert alert-warning" role="alert">
+        <strong>Votre panier est vide</strong>
+    </div>
+</div>
+<div *ngIf="panier != null">
+    <h3 class="mt-2">Votre panier</h3>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nom de l'article</th>
+                <th scope="col">Quantité commandée</th>
+                <th scope="col">Prix individuel</th>
+                <th scope="col">Prix total</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let article of panierList">
+                <th scope="row">{{article.nom}}</th>
+                <td>{{article.quantity}}</td>
+                <td>{{article.prix}}</td>
+                <td>{{article.prix * article.quantity}}</td>
+                <td><button class="btn btn-danger" (click)="supprimer(article.id)">Supprimer</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

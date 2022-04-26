@@ -58,15 +58,13 @@ const routes: Routes = [
     component: UsersmanagerComponent
   },
 
-
-  // { path: '', redirectTo: 'products', pathMatch: 'full' },
-  //{ path: 'home', redirectTo: 'products', pathMatch: 'full' },
-  { path: 'home', redirectTo: 'usersmanager', pathMatch: 'full' },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
 
   {
     path: '**',
-    redirectTo: 'usersmanager'
-  }];
+    redirectTo: ''
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
