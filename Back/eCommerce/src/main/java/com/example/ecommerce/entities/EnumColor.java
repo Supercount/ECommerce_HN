@@ -1,7 +1,7 @@
 package com.example.ecommerce.entities;
 
 public enum EnumColor {
-    YELLOW("jaune"), PINK("rose"), WHITE("blanc");
+    GOLD("gold"), PINK("rose"), SILVER("silver");
 
     private final String color;
 

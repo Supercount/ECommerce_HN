@@ -9,13 +9,13 @@ import { ProduitsService } from 'src/app/services/produits.service';
 })
 export class GourmettesComponent implements OnInit {
 
-  constructor(private produitService :ProduitsService) { }
+  constructor(private produitService: ProduitsService) { }
   ordre !: string;
 
   productList !: Produit[];
 
   ngOnInit(): void {
-    this.produitService.getBagues().subscribe({
+    this.produitService.getGourmettes().subscribe({
       next: products => {
         this.productList = products;
       }, error: err => {

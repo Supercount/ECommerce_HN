@@ -9,14 +9,14 @@ import { ProduitsService } from 'src/app/services/produits.service';
 })
 export class EnsemblesComponent implements OnInit {
 
-  constructor(private produitService :ProduitsService) { }
-  ordre !:string;
+  constructor(private produitService: ProduitsService) { }
+  ordre !: string;
 
   productList !: Produit[];
 
   ngOnInit(): void {
-    
-    this.produitService.getBagues().subscribe({
+
+    this.produitService.getEnsembles().subscribe({
       next: products => {
         this.productList = products;
       }, error: err => {

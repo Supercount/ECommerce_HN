@@ -67,7 +67,7 @@ public class ECommerceApplication {
 				products.add(new Product("product4","description product 4",390, EnumColor.PINK,categoryRepository.getById(2l), ""));
 				products.add(new Product("product5","description product 5",70, EnumColor.PINK,categoryRepository.getById(3l), ""));
 				products.add(new Product("product6","description product 6",99.99, EnumColor.PINK,categoryRepository.getById(4l), ""));
-				products.add(new Product("product7","description product 7",120, EnumColor.WHITE,categoryRepository.getById(4l), ""));
+				products.add(new Product("product7","description product 7",120, EnumColor.SILVER,categoryRepository.getById(4l), ""));
 
 				productRepository.saveAll(products);
 				

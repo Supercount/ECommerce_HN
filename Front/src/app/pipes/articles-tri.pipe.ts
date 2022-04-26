@@ -8,9 +8,9 @@ export class ArticlesTriPipe implements PipeTransform {
 
   transform(values: Produit[], order: string): Produit[] {
     if (order === 'DESC') {
-      return values.sort((a: Produit, b: Produit) => b.prix - a.prix);
+      return values.sort((a: Produit, b: Produit) => b.price - a.price);
     } else {
-      return values.sort((a: Produit, b: Produit) => a.prix - b.prix);
+      return values.sort((a: Produit, b: Produit) => a.price - b.price);
     }
   }
 }
