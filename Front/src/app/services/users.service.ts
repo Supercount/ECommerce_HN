@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class UsersService {
   URL_API = 'http://localhost:8080/api/users';
-
+  URL_API_REGISTER = 'http://localhost:8080/api/auth';
   constructor(private http: HttpClient) { }
 
   //Get All users
@@ -33,6 +33,11 @@ export class UsersService {
   update(users: User) {
     return this.http.put(`${this.URL_API}/users/${users.id}`, users)
   }
+  signup(user: User) {
 
+    return this.http.post<User>(`${this.URL_API_REGISTER}/signup`, user);
+
+
+  }
 
 }
