@@ -16,7 +16,8 @@ export class UsersmanagerComponent implements OnInit {
     firstname: '',
     lastname: '',
     email: '',
-    role: ''
+    password: '',
+    role: 'User'
 
   };
   myCondition: Boolean = false;
@@ -55,6 +56,7 @@ export class UsersmanagerComponent implements OnInit {
       firstname: '',
       lastname: '',
       email: '',
+      password: '',
       role: ''
     }
   }

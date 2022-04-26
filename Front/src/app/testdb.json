@@ -1,46 +1,105 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        },
-        {
-            "id": 2,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        },
-        {
-            "id": 3,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        },
-        {
-            "id": 4,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        },
-        {
-            "id": 5,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        },
-        {
-            "id": 6,
-            "firstname": "Mehdi",
-            "lastname": "El Idrissi",
-            "username": "mehdi.bidrissi@gmail.com",
-            "role": "Admin"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "User"
+    },
+    {
+      "id": 2,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "Admin"
+    },
+    {
+      "id": 3,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "Admin+User"
+    },
+    {
+      "id": 4,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "Admin"
+    },
+    {
+      "id": 5,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "Admin"
+    },
+    {
+      "id": 6,
+      "firstname": "Mehdi",
+      "lastname": "El Idrissi",
+      "email": "mehdi.bidrissi@gmail.com",
+      "role": "Admin"
+    },
+    {
+      "lastname": "naffah",
+      "firstname": "ikram",
+      "email": "ikramnaffah8@gmail.com",
+      "password": "jjjj",
+      "role": "User",
+      "id": 7
+    },
+    {
+      "lastname": "naffah",
+      "firstname": "Mostapha",
+      "email": "naffah.mostapha@gmail.com",
+      "password": "eretetet",
+      "role": "User",
+      "id": 8
+    },
+    {
+      "lastname": "Aidane",
+      "firstname": "Leila",
+      "email": "leila.aidane@gmail.com",
+      "password": "dddd",
+      "role": "User",
+      "id": 9
+    },
+    {
+      "lastname": "naffah",
+      "firstname": "ikram",
+      "email": "mehdi.bidrissi@gmail.com",
+      "password": "kkk",
+      "role": "User",
+      "id": 12
+    },
+    {
+      "lastname": "naffah",
+      "firstname": "ikram2",
+      "email": "naffah.mostapha@gmail.com",
+      "password": "kkkkkk",
+      "role": "User",
+      "id": 13
+    },
+    {
+      "lastname": "kkk",
+      "firstname": "kkk",
+      "email": "kkk@gmail.com",
+      "password": "12345678",
+      "role": "User",
+      "id": 14
+    },
+    {
+      "lastname": "Idrissi",
+      "firstname": "Naffah",
+      "email": "ikramnaffah8@gmail.com",
+      "password": "hjjjjjjj",
+      "role": "User",
+      "id": 15
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
