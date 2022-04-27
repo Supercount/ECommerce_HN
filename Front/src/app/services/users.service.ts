@@ -14,24 +14,24 @@ export class UsersService {
   //Get All users
 
   getAll() {
-    return this.http.get<User[]>(`${this.URL_API}/users`);
+    return this.http.get<User[]>(`${this.URL_API}`);
 
   }
 
   delete(id: Number) {
 
-    return this.http.delete(`${this.URL_API}/users/${id}`);
+    return this.http.delete(`${this.URL_API}/${id}`);
 
   }
 
   post(users: User) {
 
-    return this.http.post<User>(`${this.URL_API}/users/new_user`, users);
+    return this.http.post<User>(`${this.URL_API}`, users);
 
   }
 
   update(users: User) {
-    return this.http.put(`${this.URL_API}/users/${users.id}`, users)
+    return this.http.put(`${this.URL_API}/${users.id}`, users)
   }
   signup(user: User) {
 

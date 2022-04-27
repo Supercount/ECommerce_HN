@@ -28,7 +28,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/users")
+	@GetMapping("/")
 	public ResponseEntity<?> showAllUsers() {
 
 		try {
@@ -41,7 +41,7 @@ public class UserController {
 		     
 	}
 	
-	@PostMapping("/users/new_user")
+	@PostMapping("/")
 	public ResponseEntity<?> addNewUSer(@RequestBody AddUser dto){
 		try {
 			User newUSer= new User();
@@ -62,7 +62,7 @@ public class UserController {
 		
 	}
 	
-	@PutMapping("users/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<?> editUser(@RequestBody AddUser dto)
 	{
 		System.out.println("edit user entry "+dto);
@@ -77,7 +77,7 @@ public class UserController {
 		     
 	}
 	
-	@DeleteMapping("users/{id}")
+	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteUser(@PathVariable("id") Long id)
 	
 	{System.out.println("delete entry"+id);
