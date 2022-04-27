@@ -1,0 +1,26 @@
+h4.silver {
+
+    color: silver;
+}
+
+h4.gold {
+
+    color: goldenrod;
+}
+
+h4.rose {
+
+    color: rosybrown;
+}
+
+img {
+
+    height: 14.5rem;
+}
+
+.btn {
+
+    background-color: rosybrown !important;
+
+
+}

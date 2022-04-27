@@ -1,0 +1,14 @@
+<div class="container" mt-4>
+    <div class="align-right">
+        Trier les colliers par :
+        <select [(ngModel)]="ordre">
+            <option value="ASC">Prix croissant</option>
+            <option value="DESC">Prix décroissant</option>
+        </select>
+    </div>
+    <div class="row">
+        <app-produit [produit]="produit" class="col-lg-4 col-md-4 col-xd-12"
+            *ngFor="let produit of productList | articlesTri: ordre"></app-produit>
+    </div>
+
+</div>

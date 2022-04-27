@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Produit } from 'src/app/models/produit';
 import { ProduitsService } from 'src/app/services/produits.service';
 
@@ -10,16 +10,29 @@ import { ProduitsService } from 'src/app/services/produits.service';
 })
 export class ProduitsComponent implements OnInit {
 
-  productList : Produit[] = [];
-  type: string = "";
+  productList !: Produit[];
+  categories:string[] = ["Bague", "Collier", "Bracelet"];
   ordre:string = "";
+  filtres:string[] = [];
   
-  registerForm!: FormGroup;
+  form!: FormGroup;
 
-  constructor(private produitService :ProduitsService, private formBuilder : FormBuilder) { }
+  constructor(private produitService :ProduitsService, private formBuilder : FormBuilder) {
+    this.form = formBuilder.group({
+    filtres:  new FormArray([])
+    }); }
+
+    
+  changeCheckbox(event: Event) {
+    console.log(event.target);
+  }
+
+  submit() {
+    console.log(this.form.value);
+  }
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
     });
     this.produitService.getProducts().subscribe({
       next: products => {

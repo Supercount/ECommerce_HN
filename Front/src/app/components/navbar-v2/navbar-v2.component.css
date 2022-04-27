@@ -1,0 +1,21 @@
+.btn {
+    border: none;
+    padding: 12px 14px;
+    background-color: white;
+
+
+
+}
+
+.btn:hover {
+    background-color: rosybrown;
+    border-radius: 0px !important;
+
+}
+
+.leftbutton {
+    justify-content: end;
+
+
+
+}

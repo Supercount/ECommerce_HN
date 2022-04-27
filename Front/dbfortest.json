@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "hind",
+      "lastname": "naffah",
+      "email": "",
+      "role": "Admin+User",
+      "username": "ikramnaffah8@gmail.com"
+    }
+  ]
+}

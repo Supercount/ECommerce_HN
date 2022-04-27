@@ -1,0 +1,31 @@
+div.briant {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background-color: white;
+}
+
+h4 {
+    position: relative;
+    font-family: Impact, sans-serif;
+    font-size: 45px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, rosybrown, silver);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 10s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}

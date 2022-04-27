@@ -1,0 +1,46 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        },
+        {
+            "id": 2,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        },
+        {
+            "id": 3,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        },
+        {
+            "id": 4,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        },
+        {
+            "id": 5,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        },
+        {
+            "id": 6,
+            "firstname": "Mehdi",
+            "lastname": "El Idrissi",
+            "email": "mehdi.bidrissi@gmail.com",
+            "role": "Admin"
+        }
+    ]
+}

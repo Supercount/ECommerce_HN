@@ -1,0 +1,41 @@
+<div class="container w-50 mt-2">
+    <h2 class="text-center pb-3">Formulaire d'inscription</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group mb-3">
+            <input formControlName="username" ngClass="{'is-invalid':submitted && signupForm.controls.username.errors }"
+                type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+
+        <div class="form-group mb-3">
+            <input formControlName="lastname" ngClass="{'is-invalid':submitted && signupForm.controls.lastname.errors }"
+                type="text" class="form-control" id="lastname" placeholder="Nom">
+        </div>
+
+        <div class="form-group mb-3">
+            <input formControlName="firstname"
+                ngClass="{'is-invalid':submitted && signupForm.controls.firstname.errors}" type="text"
+                class="form-control" id="firstname" placeholder="Prénom">
+        </div>
+        <div class="form-group mb-3">
+            <input formControlName="email" ngClass="{'is-invalid':submitted && signupForm.controls.email.errors }"
+                type="email" class="form-control" id="email" placeholder="Email">
+            <div id="emailHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec quelqu'un d'autre.</div>
+        </div>
+        <div class="form-group mb-3">
+            <input formControlName="password" ngClass="{'is-invalid':submitted && signupForm.password.email.errors }"
+                type="password" class="form-control" id="password" placeholder="Mot de passe">
+
+        </div>
+        <div class="form-group mb-3">
+            <input formControlName="role" type="hidden" class="form-control" id="role" placeholder="role">
+
+        </div>
+        <div class="form-group mb-3">
+            <button class="btn btn-block text-light " type="submit"><b>Enregistrer</b>
+            </button>
+
+        </div>
+    </form>
+
+</div>
