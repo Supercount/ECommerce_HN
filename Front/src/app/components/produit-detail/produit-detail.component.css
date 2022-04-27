@@ -12,6 +12,17 @@ img {
     font-size: 1.2em;
 }
 
-button{
+button {
     margin-left: 15px;
+    border: 0px;
+}
+
+h6 {
+    font-family: Georgia, serif;
+}
+
+a {
+    font-size: 15px;
+    font-family: Georgia, serif;
+    border: 0px;
 }

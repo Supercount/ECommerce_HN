@@ -1,18 +1,18 @@
 <div class="container w-50 mt-2">
     <h2 class="text-center pb-3">Déjà membre? Connectez-vous:</h2>
-    <form role="form">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group mb-3">
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+            <input formControlName="username" type="text" class="form-control" id="username"
+                placeholder="Nom d'utilisateur">
         </div>
         <div class="form-group mb-3">
-            <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+            <input formControlName="password" type="password" class="form-control" id="password"
+                placeholder="Mot de passe">
         </div>
         <a routerLink="/inscription">Mot de passe oublié</a>
         <div class="form-group mb-3">
-            <a routerLink="">
-                <button type="submit" class="btn btn-block text-light mt-2"><b>Je me connecte...</b> </button>
-            </a>
+            <button type="submit" class="btn btn-block text-light mt-2"><b>Je me connecte...</b> </button>
         </div>
     </form>
     <h6 class="text-center pb-3">Pas encore membre? <a routerLink="/inscription">Inscrivez-vous</a> </h6>

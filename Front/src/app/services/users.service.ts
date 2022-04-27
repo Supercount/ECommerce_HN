@@ -39,5 +39,11 @@ export class UsersService {
 
 
   }
+  signin(user: User) {
 
+    console.log(user);
+    return this.http.post<User>(`${this.URL_API_REGISTER}/signin`, user);
+
+
+  }
 }

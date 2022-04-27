@@ -1,10 +1,11 @@
 <div style="width: 18rem;" class="mt-5">
-    <!--img [src]="produit.picture" class="img-fluid img-responsive align-self-center" [alt]="produit.name"-->
-    <img src="../../../assets/img/bague/bague1.png" class="img-fluid img-responsive align-self-center"
-        [alt]="produit.name">
+    <img [src]="produit.picture" class="img-fluid img-responsive align-self-center" [alt]="produit.name">
+    <!--img src="../../../assets/img/bague/bague1.png" class="img-fluid img-responsive align-self-center"
+        [alt]="produit.name"-->
     <h4 class="my-2" [style.color]="produit.color">{{produit.name}} </h4>
     <div class="row">
-        <p>Prix : <span *ngIf="produit.price;else na">{{produit.price | currency : "EUR" : 'symbol' }} </span></p>
+        <p>Prix : <span *ngIf="produit.price;else na">{{produit.price | currency : "EUR" :
+                'symbol' }} </span></p>
     </div>
     <a [routerLink]="['/products', produit.id]">Afficher les détails</a>
     <ng-template #na>N/A</ng-template>

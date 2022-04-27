@@ -13,7 +13,7 @@
           <th scope="col">Quantité commandée</th>
           <th scope="col">Prix individuel</th>
           <th scope="col">Prix total</th>
-          <th scope="col">Action</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -23,6 +23,7 @@
           <td>{{article.price}}</td>
           <td>{{article.price * article.quantity}}</td>
           <td><button class="btn btn-danger" (click)="supprimer(article.product)">Supprimer</button></td>
+
         </tr>
         <tr>
           <td></td>

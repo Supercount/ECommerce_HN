@@ -57,23 +57,7 @@
             <div *ngIf="myArray.length==0" class="alert alert-warning w-50 mx-auto"> Aucun utilisateur trouvé
             </div>
 
-            <div class="table-filter" *ngIf="myArray.length>0">
-                <div class="row">
-                    <div class="col-sm-6">
-                    </div>
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                        <div class="filter-group">
-                            <input type="text" placeholder="Nom" class="form-control">
-                        </div>
-                        <div class="filter-group">
-                            <input type="text" placeholder="Rôle" class="form-control">
 
-                        </div>
-                        <span class="filter-icon"><i class="fa fa-filter"></i></span>
-                    </div>
-                </div>
-            </div>
             <table class="table table-striped table-hover" *ngIf="myArray.length>0">
                 <thead>
                     <tr>
